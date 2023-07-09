@@ -3,4 +3,3 @@ class Solution:
         for i in range(k):
             e=nums.pop(-1)
             nums.insert(0,e)
-        
