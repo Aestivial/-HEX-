@@ -9,11 +9,4 @@ class Solution:
             else:
                 pass
             
-        def check(x,i,j):
-            if i>j:
-                return True
-            elif x[i]==x[j]:
-                return check(x,i+1,j-1)
-            else:
-                return False
-        return check(x,0,len(x)-1)
+        return x==x[::-1]
