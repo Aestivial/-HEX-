@@ -1,7 +1,10 @@
+import itertools
+
 class Solution:        
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        result = [[]]
-        for n in nums:
-            for i in range(len(result)):
-                result.append(result[i]+[n])
-        return result
+        power_sets=[[]]
+        
+        for num in nums:
+            power_sets+=[subset+[num] for subset in power_sets]
+        
+        return power_sets
