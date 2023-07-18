@@ -1,6 +1,12 @@
-class Solution:        
-    def subsets(self, nums: List[int]) -> List[List[int]]:
-        power_sets=[[]]
-        for num in nums:
-            power_sets+=[subset+[num] for subset in power_sets]
-        return power_sets
+class Solution:                  
+    def subsets(self, nums: List[int]) -> List[List[int]]:       
+        ans=[]
+        n=len(nums)
+        def solve(arr,index,subset):
+            if index==n:
+                ans.append(subset)
+                return
+            solve(arr,index+1,subset)
+            solve(arr,index+1,subset+[arr[index]])
+        solve(nums,0,[])
+        return ans
