@@ -1,0 +1,1 @@
+SELECT Weather.id from Weather JOIN Weather as w where Weather.temperature>w.temperature AND DATEDIFF(Weather.recordDate,w.recordDate)=1;
